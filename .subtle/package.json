@@ -19,8 +19,8 @@
   "site": {
     "title": "Subtle",
     "styles": [
-      "https://cdn.jsdelivr.net/npm/@anyblades/blades@0/assets/blades.min.css",
-      "https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css"
+      "/blades.css",
+      "https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-okaidia.min.css"
     ],
     "scripts": [
       "https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js",
