@@ -16,7 +16,6 @@
     "serve": "^14.2.5"
   },
   "dependencies": {
-    "@anyblades/eleventy-blades": "^0.29.0-beta.3",
     "@anyblades/eleventy-blades-base": "^0.4.1"
   },
   "=== SITE GLOBALS": "===",
