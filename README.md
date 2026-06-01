@@ -13,12 +13,16 @@ permalink: /
 
 ---
 
-By [literally] hiding inside the `.subtle` subfolder, it declutters the project root for your content.
+By [literally] hiding inside the `.11ty` subfolder, it declutters the project root for your content.
 
-Feel the difference: <!-- screenshots are 25% of original github width -->
+Feel the difference: <!-- ... -->
 
-| https://github.com/11ty/eleventy-base-blog | https://github.com/anyblades/subtle |
-| ------------------------------------------ | ----------------------------------- |
-| ![](/media/eleventy-base-blog.png)         | ![](/media/subtle.png)              |
+<table class="borderless"><tr><td>
 
-<!--{.borderless}-->
+https://github.com/11ty/eleventy-base-blog
+
+</td><td>
+
+https://github.com/anyblades/subtle
+
+</td></tr></table>
