@@ -60,3 +60,11 @@ Feel the difference:
 ```
 
 </td></tr></table>
+
+---
+
+Featured by:
+
+https://11tybundle.dev/starters/,
+https://11ty.blades.ninja/starters/,
+[awesome-11ty](https://github.com/anyblades/awesome-11ty-buildawesome)
