@@ -64,6 +64,18 @@ Feel the difference:
 
 ---
 
+Local development is as simple as:
+
+```sh
+cd .11ty/
+npm install    # dependencies
+npm start      # development
+npm run stage  # serve production version locally
+               # ready to deploy! 🚀
+```
+
+---
+
 Featured by:
 
 https://11tybundle.dev/starters/,
