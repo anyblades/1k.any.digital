@@ -19,6 +19,7 @@ title: <sup style>All-time</sup> Top football players <sub style>by goals scored
     padding-top: 1em;
     th, td {
       text-align: center;
+      padding-inline: 1ch;
     }
   }
   #th-goals {
