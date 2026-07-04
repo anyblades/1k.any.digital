@@ -12,7 +12,7 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
   &::after { content: "⚽️"; font-size: 2rem }
 }</style>
 
-<figure class="breakout-item-max">
+<figure>
 
 | Player                                           | Cristiano <br>Ronaldo                     | Lionel <br>Messi                      | Kylian <br>Mbappé                   | Erling <br>Haaland                 | Lamine <br>Yamal                      |
 | ------------------------------------------------ | ----------------------------------------- | ------------------------------------- | ----------------------------------- | ---------------------------------- | ------------------------------------- |
@@ -114,7 +114,7 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
         ~ td { border: none }
       }
     }
-    tr:has([class="vs-ly"]) td { border-color: yellow }
+    tr:has([class="vs-ly"]) td { border-color: goldenrod }
     tr:has([class="vs-eh"]) td { border-color: red }
     tr:has([class="vs-lm"]) td { border-color: teal }
     /* [NICE] Overrides */
