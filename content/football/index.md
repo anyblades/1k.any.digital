@@ -12,6 +12,8 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
   &::after { content: "⚽️"; font-size: 2rem }
 }</style>
 
+<figure class="breakout-item-max">
+
 | Player                                           | Cristiano <br>Ronaldo                     | Lionel <br>Messi                      | Kylian <br>Mbappé                   | Erling <br>Haaland                 | Lamine <br>Yamal                      |
 | ------------------------------------------------ | ----------------------------------------- | ------------------------------------- | ----------------------------------- | ---------------------------------- | ------------------------------------- |
 | Country #                                        | 🇵🇹 #7                                     | 🇦🇷 #10                                | 🇫🇷 #10                              | 🇳🇴 #9                              | 🇪🇸 #19                                |
@@ -54,6 +56,8 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
 | 25th                                             | `3` _'26/27 ∑=976_ 🌐3                    | ... _'28_                             |                                     |                                    |                                       |
 
 {.striped}
+
+</figure>
 
 <style>
   table {
