@@ -6,17 +6,33 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
 
 ---
 
-<style>h1 i {
-  font-style: normal;
-  font-size: 0;
-  &::after { content: "⚽️"; font-size: 2rem }
-}</style>
+<style>
+  h1 i {
+    font-style: normal;
+    font-size: 0;
+    &::after { content: "⚽️"; font-size: 2rem }
+  }
+  /* [CORE] Table styles */
+  table {
+    display: table !important;
+    border-collapse: separate;
+    @media (width >= 1024px) { font-size: 125% }
+    th, td {
+      padding-inline: calc(var(--pico-spacing) / 4);
+      &:not(:first-child) { text-align: center; text-wrap: nowrap }
+    }
+    /* [NICE] Headers */
+    thead {
+      position: sticky; top: 0; z-index: 999;
+      sup { margin-inline: -1.5ch 0.125ch; top: -0.25em }
+    }
+  }
+</style>
 
 <figure>
 
-| Player                                           | Cristiano <br>Ronaldo                     | Lionel <br>Messi                      | Kylian <br>Mbappé                   | Erling <br>Haaland                 | Lamine <br>Yamal                      |
+| Player                                           | <sup>🇵🇹</sup>Cristiano <br>Ronaldo        | <sup>🇦🇷</sup>Lionel <br>Messi         | <sup>🇫🇷</sup>Kylian <br>Mbappé      | <sup>🇳🇴</sup>Erling <br>Haaland    | <sup>🇪🇸</sup>Lamine <br>Yamal         |
 | ------------------------------------------------ | ----------------------------------------- | ------------------------------------- | ----------------------------------- | ---------------------------------- | ------------------------------------- |
-| Country #                                        | 🇵🇹 #7                                     | 🇦🇷 #10                                | 🇫🇷 #10                              | 🇳🇴 #9                              | 🇪🇸 #19                                |
 | Goals {#row-goals}                               | `976` _~41/year_                          | 918 _~42/year_                        | 431 _~41/year_                      | 357 _~35/year_                     | 56 _~18/year_                         |
 | World Cup goals                                  | 🌐11                                      | `🌐20`                                | 🌐18                                | 🌐5                                | 🌐1                                   |
 | World Cups won                                   | — _of 6_                                  | <code>🏆**1**</code> _of 6_           | <code>🏆**1**</code> _of 3_         | — _of 1_                           | — _of 1_                              |
@@ -25,8 +41,7 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
 | Debut age                                        | 17y 6m _Sporting vs Inter<br>'02/03_      | 17y 3m _Barça vs Espanyol<br>'04/05_  | 16y 11m _Monaco vs Caen<br>'15/16_  | `15y 9m` _Bryne vs Ranheim<br>'16_ | `15y 9m` _Barça vs Betis<br>'22/23_   |
 | 1st goal                                         | 17y 8m _Sporting vs Moreirense<br>'02/03_ | 17y 10m _Barça vs Albacete<br>'04/05_ | 17y 2m _Monaco vs Troyes<br>'15/16_ | `16y 9m` _Molde vs Volda<br>'17_   | `16y 2m` _Barça vs Granada<br>'23/24_ |
 | Seasons played                                   | `23.9` _'02/03–present_                   | 21.7 _'04/05–present_                 | 10.6 _'15/16–present_               | 10.1 _'16–present_                 | 3.2 _'22/23–present_                  |
-| By season: {#row-s}                              |                                           |                                       |                                     |                                    |                                       |
-| 1st                                              | `5` _'02/03 ∑=5_                          | 1 _'04/05 ∑=1_                        | 1 _'15/16 ∑=1_                      | 0 _'16 ∑=0_                        | 0 _'22/23 ∑=0_                        |
+| 1st season {#row-s1}                             | `5` _'02/03 ∑=5_                          | 1 _'04/05 ∑=1_                        | 1 _'15/16 ∑=1_                      | 0 _'16 ∑=0_                        | 0 _'22/23 ∑=0_                        |
 | 2nd                                              | 6 _'03/04 ∑=11_                           | 8 _'05/06 ∑=9_                        | `26` _'16/17 ∑=27_                  | 4 _'17 ∑=4_                        | 9 _'23/24 ∑=9_                        |
 | 3rd                                              | 16 _'04/05 ∑=27_                          | 19 _'06/07 ∑=28_ 🌐1                  | `22` _'17/18 ∑=49_                  | 17 _'18 ∑=21_                      | 19 _'24/25 ∑=28_                      |
 | 4th                                              | 14 _'05/06 ∑=41_                          | 22 _'07/08 ∑=50_                      | `48` _'18/19 ∑=97_ 🏆🌐4            | 44 _'19/20 ∑=65_                   | 27 _'25/26 ∑=55_ {.bar-es}            |
@@ -61,14 +76,6 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
 
 <style>
   table {
-    display: table !important;
-    border-collapse: separate;
-    @media (width >= 1024px) { font-size: 125% }
-    /* [CORE] Table styles */
-    th, td {
-      padding-inline: calc(var(--pico-spacing) / 4);
-      &:not(:first-child) { text-align: center; text-wrap: nowrap }
-    }
     /* [CORE] Sub-line helper */
     em {
       display: block;
@@ -91,8 +98,19 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
       /* filter: sepia(1) saturate(10) hue-rotate(10deg) brightness(1.2); */
       filter: sepia(1) saturate(8) hue-rotate(-5deg) brightness(0.85) contrast(1.4);
     }
-    /* [NICE] Sticky headers */
-    thead { position: sticky; top: 0; z-index: 999 }
+    /* [NICE] Goals & seasons */
+    tr:has(#row-goals) { font-size: 150% }
+    tr:has(#row-s1) {
+      &, & ~ tr {
+        td:first-child {
+          text-align: center;
+          vertical-align: middle;
+          font-style: italic;
+          font-size: 75%;
+          opacity: 50%;
+        }
+      }
+    }
     /* [NICE] Subtotals */
     tr:has([class^="vs-"]) td {
       border-style: solid;
@@ -100,7 +118,7 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
       &:first-child {
         min-width: 20ch;
         &::before { content: "= SUBTOTALS ="; display: block; font-weight: bold }
-        font-size: 50%;
+        font-size: 50% !important;
         border-left-width: 1px;
         opacity: 100% !important;
       }
@@ -112,14 +130,6 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
     tr:has([class="vs-ly"]) td { border-color: goldenrod }
     tr:has([class="vs-eh"]) td { border-color: red }
     tr:has([class="vs-lm"]) td { border-color: teal }
-    /* [NICE] Overrides */
-    tr:has(#row-goals) { font-size: 150% }
-    tr:has(#row-s) ~ tr td:first-child {
-      text-align: center;
-      vertical-align: middle;
-      font-style: italic;
-      opacity: 50%;
-    }
   }
 </style>
 
