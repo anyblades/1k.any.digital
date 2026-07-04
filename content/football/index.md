@@ -41,7 +41,8 @@ title: <sup style>All-time</sup> Top football goalscorers <sub style>and runners
 | 19th                                             | `39` _'20/21 ∑=776_                        | `39` _'22/23 ∑=802_ **⚽️**🏆🌐7        |                                      |                                        |                                        |
 | 20th                                             | `37` _'21/22 ∑=813_                        | 19 _'23 ∑=821_                         |                                      |                                        |                                        |
 | 21st                                             | 20 _'22/23 ∑=833_ 🌐1                      | `29` _'24 ∑=850_                       |                                      |                                        |                                        |
-| 22nd                                             | `60` _'23/24 ∑=893_                        | 46 _'25 ∑=896_ {.bar-ar}               |                                      |                                        |                                        |
+| 22nd                                             | `60` _'23/24 ∑=893_                        | 46 _'25 ∑=896_                         |                                      |                                        |                                        |
+| Ronaldo vs `Messi`                               | `∑=893` <br>**⚽️5👟4**🌐8                  | `∑=896` <br>**⚽️8👟6**🏆🌐13 {.vs-lm}  |
 | 23rd                                             | `42` _'24/25 ∑=935_                        | 22 _'26 ∑=918_ 🌐7                     |                                      |                                        |                                        |
 | 24th                                             | `38` _'25/26 ∑=973_                        |                                        |                                      |                                        |                                        |
 | 25th                                             | `3` _'26/27 ∑=976_ 🌐3                     |                                        |                                      |                                        |                                        |
@@ -100,9 +101,7 @@ title: <sup style>All-time</sup> Top football goalscorers <sub style>and runners
       }
       &[class^="vs-"] {
         border-right-width: 1px;
-        + td {
-          border: none;
-        }
+        ~ td { border: none }
       }
     }
     tr:has([class="vs-ly"]) td { border-color: yellow }
