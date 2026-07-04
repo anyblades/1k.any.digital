@@ -100,10 +100,10 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
     }
     /* [NICE] Subtotals */
     tr:has([class^="vs-"]) td {
-      width: 20%;
       border-style: solid;
       border-width: 1px 0;
       &:first-child {
+        min-width: 20ch;
         &::before { content: "= SUBTOTALS ="; display: block; font-weight: bold }
         font-size: 50%;
         border-left-width: 1px;
