@@ -1,16 +1,17 @@
 ---
 eleventyNavigation:
-  key: <i>⚽️</i> Goalscorers
-title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and their runners-up • as of July 3</sub>
+  key: G<b data-i="⚽️"><b>o</b></b>alscorers
+title: <sup style>2026</sup> Top football g<b data-i="⚽️"><b>o</b></b>alscorers <sub style>and their runners-up • as of July 3</sub>
 ---
 
 ---
 
 <style>
-  h1 i {
+  /*TODO: move to blades.ninja.css */
+  b[data-i] {
     font-style: normal;
-    font-size: 0;
-    &::after { content: "⚽️"; font-size: 2rem }
+    b { font-size: 0 }
+    &::after { content: attr(data-i) }
   }
   /* [CORE] Table styles */
   table {
@@ -30,6 +31,7 @@ title: <sup style>2026</sup> Top football g<i>o</i>alscorers <sub style>and thei
     /* [NICE] Headers */
     thead {
       position: sticky; top: 0; z-index: 999;
+      line-height: 1;
       sup { margin-inline: -1.5ch 0.125ch; top: -0.25em }
     }
   }
