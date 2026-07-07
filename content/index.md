@@ -1,6 +1,6 @@
 ---
 title: The Race for <mark>1000 Goals</mark>
-description: "Who will cross the bar of 1K goals? Tracking active football legends, rising contenders, and their historic season-by-season performance.&nbsp; <i class='faded' style='text-wrap: nowrap'>Updated: July 5, 2026</i>"
+description: "Who will cross the bar of 1K goals? Tracking active football legends, rising contenders, and their historic season-by-season performance.&nbsp; <i class='faded' style='text-wrap: nowrap'>Updated: July 7, 2026</i>"
 ---
 
 ---
@@ -40,8 +40,8 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 
 | Player                                           | <sup>🇵🇹</sup>Cristiano <br>Ronaldo        | <sup>🇦🇷</sup>Lionel <br>Messi          | <sup>🇫🇷</sup>Kylian <br>Mbappé      | <sup>🇳🇴</sup>Erling <br>Haaland     | <sup>🇪🇸</sup>Lamine <br>Yamal         |
 | ------------------------------------------------ | ----------------------------------------- | -------------------------------------- | ----------------------------------- | ----------------------------------- | ------------------------------------- |
-| Goals {#row-goals}                               | `976` _~41/year_                          | 918 _~42/year_                         | 432 _~41/year_                      | 359 _~36/year_                      | 56 _~18/year_                         |
-| World&nbsp;Cup goals                             | 🌐11                                      | `🌐20`                                 | 🌐19                                | 🌐7                                 | 🌐1                                   |
+| Goals {#row-goals}                               | `976` _~41/year_                          | 919 _~42/year_                         | 432 _~41/year_                      | 359 _~36/year_                      | 56 _~18/year_                         |
+| World&nbsp;Cup goals                             | 🌐11                                      | `🌐21`                                 | 🌐19                                | 🌐7                                 | 🌐1                                   |
 | World&nbsp;Cups won                              | — _of 6_                                  | <code>**🏆1**</code> _of 6_            | <code>**🏆1**</code> _of 3_         | — _of 1_                            | — _of 1_                              |
 | Golden&nbsp;Shoes                                | **👟4**                                   | <code>**👟6**</code>                   | **👟1**                             | **👟1**                             | —                                     |
 | Ballons&nbsp;d'Or                                | **⚽️5**                                   | <code>**⚽️8**</code>                   | —                                   | —                                   | —                                     |
@@ -73,7 +73,7 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 | 21st season                                      | _'22/23_ 20 _∑=833_ <br>🌐1               | _2024_ `29` _∑=850_                    |                                     |                                     |                                       |
 | 22nd season                                      | _'23/24_ `60` _∑=893_                     | _2025_ 46 _∑=896_                      |                                     |                                     |                                       |
 | Ronaldo vs `Messi`                               | `∑=893` <br>**⚽️5👟4**🌐8                 | `∑=896` <br>**⚽️8👟6🏆1**🌐13 {.vs-lm} |
-| 23rd season                                      | _'24/25_ `42` _∑=935_                     | _2026_ 22 _∑=918_ <br>🌐7              |                                     |                                     |                                       |
+| 23rd season                                      | _'24/25_ `42` _∑=935_                     | _2026_ 23 _∑=919_ <br>🌐8              |                                     |                                     |                                       |
 | 24th season                                      | _'25/26_ `38` _∑=973_                     | _2027_ ...                             |                                     |                                     |
 | 25th season                                      | _'26/27_ `3` _∑=976_ <br>🌐3              | _2028_ ...                             |                                     |                                     |                                       |
 
