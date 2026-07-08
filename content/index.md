@@ -6,12 +6,6 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 ---
 
 <style>
-  /*TODO: move to blades.ninja.css
-  b[data-i] {
-    font-style: normal;
-    b { font-size: 0 }
-    &::after { content: attr(data-i) }
-  } */
   /* [CORE] Table styles */
   table {
     display: table !important;

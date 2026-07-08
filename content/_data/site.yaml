@@ -1,6 +1,6 @@
 base: https://1k.any.digital
-title: 1000 Goals Tracker
-brand: 1⚽️⚽️⚽️ <sup class="brand">Goals<br>Tracker</sup>
+title: 1K Goals Tracker
+brand: 1K <sup class="brand">G<b data-i="⚽️"><b>o</b></b>als<br>Tracker</sup>
 header_links:
   - url: https://github.com/anyblades/1k.any.digital
     title: <i class="fa-solid fa-laptop-code fa-sm faded"></i>
@@ -19,4 +19,10 @@ head_extras:
         text-transform: uppercase; font-size: 45%;
       }
       body > footer { text-align: center }
+      /*TODO: move to blades.ninja.css */
+      b[data-i] {
+        font-style: normal;
+        b { font-size: 0 }
+        &::after { content: attr(data-i) }
+      }
     </style>
