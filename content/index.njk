@@ -3,13 +3,16 @@ eleventyComputed:
   content_for_header: |-
     <meta property="og:image" content="{{ site.base }}/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
+site:
+  styles:
+    - https://cdn.jsdelivr.net/npm/charts.css@1/dist/charts.min.css
 title: The Race for <mark>1000 Goals</mark>
 description: "Who will cross the bar of 1K goals? Tracking active football legends, rising contenders, and their historic season-by-season performance.&nbsp; <i class='faded' style='text-wrap: nowrap'>Updated: July 9, 2026</i>"
 ---
 
 <style>
   /* [CORE] Table styles */
-  table {
+  table.striped {
     display: table !important;
     border-collapse: separate;
     @media (width >= 1024px) { font-size: 125% }
@@ -33,8 +36,9 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 </style>
 
 <hr>
-<figure>
 {% renderTemplate 'md,njk', { player_stats: player_stats } %}
+<figure>
+
 | Player                                           |{% for player in player_stats %} <sup>{{ player.country }}</sup>{{ player.name }} <br>{{ player.surname }} |{% endfor %}
 | ------------------------------------------------ | ----------------------------------------------- | ----------------------------------------- | ---------------------------------------- | ----------------------------------- | ------------------------------------- |
 | Goals { #row-goals}                              | `976` _~41/year_                                | 919 _~42/year_                            | 433 _~41/year_                           | 359 _~36/year_                      | 56 _~18/year_                         |
@@ -50,25 +54,40 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 {%- for s in range(0, player_stats[0].seasons | length) %}
 | Season {{ s + 1 }} |{% for p in range(0, player_stats | length) %}{% set _ %}
 {% set season = player_stats[p].seasons[s] %}
+  {% set totals = {} %}
   {% for m, val in season.metrics %}
-    {% set runn_totals = runn_totals | attr_set(p, runn_totals[p] | attr_set(m, runn_totals[p][m] | d(0) + val) ) %}
+    {% set totals = totals | attr_set(m, runn_totals[p][s - 1][m] | d(0) + val) %}
   {% endfor %}
-  _{{ season.year }}_ {{ season.metrics.goals }} _∑={{ runn_totals[p].goals }}_
+  {% set runn_totals = runn_totals | attr_set(p, runn_totals[p] | attr_set(s, totals) ) %}
+  _{{ season.year }}_ {{ season.metrics.goals }} _∑={{ totals.goals }}_
   {% set awards = season.metrics | attr_set('goals', false) | attr_set('🌐', false) %}
   <br><strong>{{ awards | dictsort | selectattr('1') | join('', '0') }}</strong>{{ '🌐' ~ season.metrics['🌐'] if season.metrics['🌐'] }}
   {{ '<br>_(' ~ season.notes ~ ')_' if season.notes }}
 {% endset %} {{ _ | replace('\n', ' ') | safe if season }} |{% endfor %}
 {%- if s in [3, 9, 21] %}
-| Subtotals {.vs-} |{% for p, totals in runn_totals %} {% if player_stats[p].seasons[s] %}∑={{ totals.goals }}{% else %}_(not reached)_{% endif %} |{% endfor %}
+| Subtotals {.vs-} |{% for p in range(0, player_stats | length) %} {% if player_stats[p].seasons[s] %}∑={{ runn_totals[p][s].goals }}{% else %}_(not reached)_{% endif %} |{% endfor %}
 {%- endif %}
 {%- endfor %}
 
 {.striped}
-{% endrenderTemplate %}
 </figure>
 
+<figure>
+  <table class="charts-css line multiple show-primary-axis show-4-secondary-axes show-data-axes">
+    {%- for s in range(0, player_stats[0].seasons | length) %}
+    <tr>
+      <th scope="row">{{ s + 1 }}</th>
+      {%- for p in range(0, player_stats | length) %}
+      {%- if runn_totals[p][s].goals %}<td style="--start: {{ runn_totals[p][s - 1].goals | d(0) / 1000 }}; --end: {{ runn_totals[p][s].goals / 1000 }}"></td>{% endif %}
+      {%- endfor %}
+    </tr>
+    {%- endfor %}
+  </table>
+</figure>
+{% endrenderTemplate %}
+
 <style>
-  table {
+  table.striped {
     /* [CORE] Sub-line helper */
     em {
       display: block; font-size: 50%;
