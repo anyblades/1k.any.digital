@@ -54,7 +54,8 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
     {% set sums = sums | attr_set(x, s.metrics | attr_set(m, sums[x][m] | d(0) + v)) %}
   {% endfor %} #}
   _{{ season.year }}_ {{ season.metrics.goals }} _∑={{ runn_totals[p].goals }}_
-  <br>**...**{{ '🌐' ~ season.metrics['🌐'] if season.metrics['🌐'] }}
+  {% set awards = season.metrics | attr_set('goals', false) | attr_set('🌐', false) %}
+  <br>**{{ awards | dictsort | selectattr('1') | join('', '0') }}**{{ '🌐' ~ season.metrics['🌐'] if season.metrics['🌐'] }}
   {{ '<br>_(' ~ season.notes ~ ')_' if season.notes }}
 {% endset %} {{ _ | replace('\n', ' ') | safe if season }} |{% endfor %}
 {%- endfor %}
