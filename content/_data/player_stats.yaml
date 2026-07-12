@@ -2,25 +2,27 @@
   surname: Ronaldo
   country: 🇵🇹
   seasons:
-    - season: "'10/11"
-      goals: 56
-      awards:
+    - year: "'10/11"
+      metrics:
+        goals: 56
         👟: true
       notes: "notes"
-    - season: "'10/11"
-      goals: 56
-      awards:
+    - year: "'10/11"
+      metrics:
+        goals: 56
         👟: true
 - name: Lionel
   surname: Messi
   country: 🇦🇷
   seasons:
-    - season: "'22/23"
-      goals: 39
-      w_cup_goals: 7
-      awards:
-        ⚽️: true
+    - year: "'22/23"
+      metrics:
+        goals: 39
+        🥇: true
+        👟: true
         🏆: true
+        🌐: 7
+        ⚽️: true
 - name: Kylian
   surname: Mbappé
   country: 🇫🇷
