@@ -1,11 +1,13 @@
 - name: Cristiano
   surname: Ronaldo
+  country: 🇵🇹
   seasons:
     - season: "'10/11"
       goals: 56
       g_shoe: true
 - name: Lionel
   surname: Messi
+  country: 🇦🇷
   seasons:
     - season: "'22/23"
       goals: 39
@@ -13,3 +15,12 @@
         goals: 7
         won: true
       b_dor: true
+- name: Kylian
+  surname: Mbappé
+  country: 🇫🇷
+- name: Erling
+  surname: Haaland
+  country: 🇳🇴
+- name: Lamine
+  surname: Yamal
+  country: 🇪🇸
