@@ -17,12 +17,13 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
     <tr>
       <th scope="row">{{ s + 1 }}</th>
       {% for p in range(0, player_stats | length) %}
+      {% set season = player_stats[p].seasons[s] %}
       {% set totals = {} %}
-      {% for m, val in player_stats[p].seasons[s].metrics %}
+      {% for m, val in season.metrics %}
         {% set totals = totals | attr_set(m, runn_totals[p][s - 1][m] | d(0) + val) %}
       {% endfor %}
       {% set runn_totals = runn_totals | attr_set(p, runn_totals[p] | attr_set(s, totals) ) %}
-      {% if totals.goals %}
+      {% if totals.goals and "current" not in season.notes | d('') %}
       <td style="--start: {{ runn_totals[p][s - 1].goals | d(0) / 1000 }}; --end: {{ totals.goals / 1000 }}">{{ totals.goals }}</td>
       {% endif %}
       {% endfor %}
