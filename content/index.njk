@@ -11,7 +11,7 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
 ---
 
 {% set totals = {} %}
-{% set ranks = {} %}
+{% set s_ranks = {} %}
 {% for s in range(0, player_stats[0].seasons | length) %}
   {% set player_goals = {} %}
   {% for p in range(0, player_stats | length) %}
@@ -24,8 +24,8 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
       {% set player_goals = player_goals | attr_set(p, new_totals.goals) %}
     {% endif %}
   {% endfor %}
-  {% for p, goals in player_goals | dictsort | sort(attribute=1, reverse=true) %}
-    {% set ranks = ranks | attr_set(s, ranks[s] | attr_set(p, loop.index)) %}
+  {% for p, goals in player_goals | dictsort | sort(attribute=1) %}
+    {% set s_ranks = s_ranks | attr_set(s, s_ranks[s] | attr_set(p, loop.index0 / (player_goals | length - 1) ) ) %}
   {% endfor %}
 {% endfor %}
 
@@ -38,7 +38,7 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
       {% if totals[p][s] %}
       {% set trail = s - (totals[p] | length - 1) + 3 %}
       <td style="--start: {{ totals[p][s - 1].goals | d(0) / 1000 }}; --end: {{ totals[p][s].goals / 1000 }}; {{ '--trail: ' ~ trail if trail > 0 }}">
-        <b class="data" style="opacity: {{ '100%' if trail == 3 }}">{{ totals[p][s].goals }}</b>
+        <b class="data" style="opacity: {{ '100%' if trail == 3 }}; transform: translateY({{ 3 * (0.5 - s_ranks[s][p]) + 1 }}em)">{{ totals[p][s].goals }}</b>
       </td>
       {% endif %}
       {% endfor %}
@@ -70,7 +70,6 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
       &::before { opacity: calc(40% + 7.5% * pow(2, var(--trail, 0) ) ) }
       .data {
         text-wrap: nowrap;
-        transform: rotate(-30deg) translateY(0.5em) !important; transform-origin: right bottom;
         -webkit-text-stroke: 0.25ch black; paint-order: stroke fill;
       }
     }
@@ -143,7 +142,7 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
       <td>Subtotals</td>
       {% for p in range(0, player_stats | length) %}
       {% if player_stats[p].seasons[s] %}
-      <td>{% set _ = '∑=' ~ totals[p][s].goals %}{{ ('<mark>' ~ _ ~ '</mark>' if ranks[s][p] == 1 else _ ) | safe }}</td>
+      <td>{% set _ = '∑=' ~ totals[p][s].goals %}{{ ('<mark>' ~ _ ~ '</mark>' if s_ranks[s][p] == 1 else _ ) | safe }}</td>
       {% endif %}
       {% endfor %}
     </tr>
