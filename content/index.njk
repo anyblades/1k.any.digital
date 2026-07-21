@@ -8,6 +8,7 @@ site:
     - https://cdn.jsdelivr.net/npm/charts.css@1/dist/charts.min.css
 title: The Race for <mark>1000 Goals</mark>
 description: "Who will cross the bar of 1K goals? Tracking active football legends, rising contenders, and their historic season-by-season performance.&nbsp; <i class='faded' style='text-wrap: nowrap'>Updated: July 20, 2026</i>"
+TRAIL_SIZE: 3
 ---
 
 {% set totals = {} %}
@@ -36,9 +37,9 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
       <th scope="row">{{ s + 1 }}</th>
       {% for p in range(0, player_stats | length) %}
       {% if totals[p][s] %}
-      {% set trail = s - (totals[p] | length - 1) + 4 %}
+      {% set trail = s - (totals[p] | length - 1) + TRAIL_SIZE %}
       <td style="--start: {{ totals[p][s - 1].goals | d(0) / 1000 }}; --end: {{ totals[p][s].goals / 1000 }}; {{ '--trail: ' ~ trail if trail > 0 }}">
-        <b class="data" style="opacity: {{ '100%' if s_ranks[s][p] == 1 or trail == 4 }}; transform: translateY({{ 1 - 4 * (s_ranks[s][p] - 0.7) }}em)">{{ totals[p][s].goals }}</b>
+        <b class="data {{ 'show' if s_ranks[s][p] == 1 or trail == TRAIL_SIZE }}" style="transform: translateY({{ 1 - 4 * (s_ranks[s][p] - 0.7) }}em)">{{ totals[p][s].goals }}</b>
       </td>
       {% endif %}
       {% endfor %}
@@ -60,17 +61,19 @@ description: "Who will cross the bar of 1K goals? Tracking active football legen
     --color-5: goldenrod;
     font-size: 50%;
     td {
-      font-weight: bold;
       &:nth-of-type(10n+1) { --color: var(--color-1) }
       &:nth-of-type(10n+2) { --color: var(--color-2) }
       &:nth-of-type(10n+3) { --color: var(--color-3) }
       &:nth-of-type(10n+4) { --color: var(--color-4) }
       &:nth-of-type(10n+5) { --color: var(--color-5) }
       color: var(--color);
-      &::before { opacity: calc(40% + 7.5% * pow(2, var(--trail, 0) ) ) }
+
+      --opacity: calc(40% + 7.5% * pow(2, var(--trail, 0) ) );
+      &::before { opacity: var(--opacity) }
       .data {
         text-wrap: nowrap;
         -webkit-text-stroke: 0.25ch black; paint-order: stroke fill;
+        &.show { opacity: var(--opacity) }
       }
     }
   }
